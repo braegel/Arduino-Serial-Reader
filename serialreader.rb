@@ -15,8 +15,9 @@ while true do
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 values = Hash.new
 lines = Array.new
-while lines.size<=121 do # 20 measurements * 6 arduino analog ports +1 fault at the beginning
+while lines.size<=11 do # 2 measurements * 5 arduino analog ports +1 fault at the beginning
   line=sp.readline;
+  puts line;
   lines<<line
 end
 
@@ -58,7 +59,4 @@ File.open("data/analog.current", "w") do |file|
   end
 end
 sp.close
-
-
-sleep(2)
 end

@@ -21,19 +21,21 @@
 
 // These constants won't change.  They're used to give names
 // to the pins used:
-const int analogInPin0 = A0;
-const int analogInPin1 = A1;
-const int analogInPin2 = A2;
-const int analogInPin3 = A3;
-const int analogInPin4 = A4;
-const int analogInPin5 = A5;
+const int analogInPin0 = 0;
+const int analogInPin1 = 1;
+const int analogInPin2 = 2;
+const int analogInPin3 = 3;
+const int analogInPin4 = 4;
+const int analogInPin5 = 5;
 
-int sensorValue0 = 0;
-int sensorValue1 = 0;
-int sensorValue2 = 0;
-int sensorValue3 = 0;
-int sensorValue4 = 0;
-int sensorValue5 = 0;
+int sensorValue0[5];
+int sensorValue1[5];
+int sensorValue2[5];
+int sensorValue3[5];
+int sensorValue4[5];
+int sensorValue5[5];
+
+int i,j,done,temp;
 
 void setup() {
   // initialize serial communications at 9600 bps:
@@ -41,27 +43,118 @@ void setup() {
 }
 
 void loop() {
-  // read the analog in value:
-  sensorValue0 = analogRead(analogInPin0);            
-  sensorValue1 = analogRead(analogInPin1);            
-  sensorValue2 = analogRead(analogInPin2);            
-  sensorValue3 = analogRead(analogInPin3);            
-  sensorValue4 = analogRead(analogInPin4);            
-  sensorValue5 = analogRead(analogInPin5);            
+  // read the analog in value 5 times:
+  
+  for (i=0;i<=5;i++){
+    sensorValue0[i] = analogRead(analogInPin0);
+////    Serial.println(sensorValue0[i]);
+//    sensorValue1[i] = analogRead(analogInPin1);
+////    Serial.println(sensorValue1[i]);    
+//    sensorValue2[i] = analogRead(analogInPin2);            
+////    Serial.println(sensorValue2[i]);
+//    sensorValue3[i] = analogRead(analogInPin3);            
+////    Serial.println(sensorValue3[i]);
+//    sensorValue4[i] = analogRead(analogInPin4);            
+////    Serial.println(sensorValue4[i]);
+//
+////    sensorValue5[i] = analogRead(analogInPin5); // TODO: Why does the code stuck if i uncomment this?
+////    Serial.println(sensorValue5[i]);
+  }
+
+// SORT Array to build the median
+
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue0[j] > sensorValue0[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue0[j + 1];
+            sensorValue0 [j+1] =  sensorValue0[j] ;
+            sensorValue0 [j] = temp;
+            done = 0;
+           }
+        }
+     }
+
+//    done = 0;                // flag to know when we're done sorting              
+//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+//      done = 1;
+//        for (j = 0; j <= 5; j++){
+//          if (sensorValue1[j] > sensorValue1[j + 1]){     // numbers are out of order - swap
+//            temp = sensorValue1[j + 1];
+//            sensorValue1 [j+1] =  sensorValue1[j] ;
+//            sensorValue1 [j] = temp;
+//            done = 0;
+//           }
+//        }
+//     }
+//    done = 0;                // flag to know when we're done sorting              
+//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+//      done = 1;
+//        for (j = 0; j <= 5; j++){
+//          if (sensorValue2[j] > sensorValue2[j + 1]){     // numbers are out of order - swap
+//            temp = sensorValue2[j + 1];
+//            sensorValue2 [j+1] =  sensorValue2[j] ;
+//            sensorValue2 [j] = temp;
+//            done = 0;
+//           }
+//        }
+//     }
+//    done = 0;                // flag to know when we're done sorting              
+//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+//      done = 1;
+//        for (j = 0; j <= 5; j++){
+//          if (sensorValue3[j] > sensorValue3[j + 1]){     // numbers are out of order - swap
+//            temp = sensorValue3[j + 1];
+//            sensorValue3 [j+1] =  sensorValue3[j] ;
+//            sensorValue3 [j] = temp;
+//            done = 0;
+//           }
+//        }
+//     }
+//    done = 0;                // flag to know when we're done sorting              
+//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+//      done = 1;
+//        for (j = 0; j <= 5; j++){
+//          if (sensorValue4[j] > sensorValue4[j + 1]){     // numbers are out of order - swap
+//            temp = sensorValue4[j + 1];
+//            sensorValue4 [j+1] =  sensorValue4[j] ;
+//            sensorValue4 [j] = temp;
+//            done = 0;
+//           }
+//        }
+//     }
+//    done = 0;                // flag to know when we're done sorting              
+//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+//      done = 1;
+//        for (j = 0; j <= 5; j++){
+//          if (sensorValue5[j] > sensorValue5[j + 1]){     // numbers are out of order - swap
+//            temp = sensorValue5[j + 1];
+//            sensorValue5 [j+1] =  sensorValue5[j] ;
+//            sensorValue5 [j] = temp;
+//            done = 0;
+//           }
+//        }
+//     }
+
+  
+  // Send middle field of array to serial. It's the median.
+  
   Serial.print("A0\t");
-  Serial.println(sensorValue0);      
-  Serial.print("A1\t");
-  Serial.println(sensorValue1);      
-  Serial.print("A2\t");
-  Serial.println(sensorValue2);      
-  Serial.print("A3\t");
-  Serial.println(sensorValue3);      
-  Serial.print("A4\t");
-  Serial.println(sensorValue4);      
-  Serial.print("A5\t");
-  Serial.println(sensorValue5);      
-  // wait 10 milliseconds before the next loop
+  Serial.println(sensorValue0[2]);      
+//  Serial.print("A1\t");
+//  Serial.println(sensorValue1[2]);      
+//  Serial.print("A2\t");
+//  Serial.println(sensorValue2[2]);      
+//  Serial.print("A3\t");
+//  Serial.println(sensorValue3[2]);      
+//  Serial.print("A4\t");
+//  Serial.println(sensorValue4[2]);      
+//  Serial.print("A5\t");
+//  Serial.println(sensorValue5[2]);      
+
+  // wait 10 miliseconds before the next loop
   // for the analog-to-digital converter to settle
   // after the last reading:
-  delay(10);                     
+  delay(100);                     
 }
