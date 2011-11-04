@@ -28,6 +28,8 @@ const int analogInPin3 = 3;
 const int analogInPin4 = 4;
 const int analogInPin5 = 5;
 
+const int measurements = 5;
+
 int sensorValue0[5];
 int sensorValue1[5];
 int sensorValue2[5];
@@ -45,7 +47,7 @@ void setup() {
 void loop() {
   // read the analog in value 5 times:
   
-  for (i=0;i<=5;i++){
+  for (i=0;i<=measurements;i++){
     sensorValue0[i] = analogRead(analogInPin0);
 ////    Serial.println(sensorValue0[i]);
 //    sensorValue1[i] = analogRead(analogInPin1);
@@ -66,7 +68,7 @@ void loop() {
     done = 0;                // flag to know when we're done sorting              
     while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
       done = 1;
-        for (j = 0; j <= 5; j++){
+        for (j = 0; j <= measurements; j++){
           if (sensorValue0[j] > sensorValue0[j + 1]){     // numbers are out of order - swap
             temp = sensorValue0[j + 1];
             sensorValue0 [j+1] =  sensorValue0[j] ;
@@ -153,8 +155,5 @@ void loop() {
 //  Serial.print("A5\t");
 //  Serial.println(sensorValue5[2]);      
 
-  // wait 10 miliseconds before the next loop
-  // for the analog-to-digital converter to settle
-  // after the last reading:
-  delay(100);                     
+  delay(1000);                     
 }
