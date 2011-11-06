@@ -153,7 +153,6 @@ void loop() {
 //  Serial.print("A4\t");
 //  Serial.println(sensorValue4[2]);      
 //  Serial.print("A5\t");
-//  Serial.println(sensorValue5[2]);      
-
-  delay(1000);                     
+//  Serial.println(sensorValue5[2]);
+  delay(5000);
 }
