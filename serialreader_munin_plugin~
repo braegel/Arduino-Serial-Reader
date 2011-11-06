@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case $1 in
+   config)
+
+        cat << 'EOM'
+graph_title Geiger Counter
+graph_vlabel nSv_h
+nSv_h.label nSv_h
+EOM
+
+exit 0;;
+esac
+
+#path to geigercouter.rb
+/usr/local/rvm/bin/ruby /home/x42/ruby-geigercounter.git/geigercounter.rb -m munin -d /dev/ttyUSB0
