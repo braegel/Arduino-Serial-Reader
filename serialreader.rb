@@ -83,12 +83,18 @@ Thread.new do
         response = ""
         row.each do |key,value|
           if key.eql?('A0')
-            response << "A0.value #{value.to_i}\n"
+            #calibration
+            # 530 => 23
+            # 616 => 15
+            # 408 => 34
+            # => m =-0.0913
+            # => b =71.28
+            response << "Temp.value #{value.to_i*(-0.0913)+71.28}\n"
           end
         end
 
         # if valid : puts and quit
-        if response.length>=10 && response.gsub(/A0.value \d+/)
+        if response.length>=10 && response.gsub(/Temp.value \d+/)
           p response.length if options[:debug]
           puts response
           exit
