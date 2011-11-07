@@ -6,7 +6,8 @@ case $1 in
         cat << 'EOM'
 graph_title Temperatur
 graph_vlabel Celsius
-nSv_h.label Celsius
+graph_args --lower-limit 20 -- upper-limit 24
+Temp.label Wohnzimmer
 EOM
 
 exit 0;;
