@@ -21,6 +21,10 @@ OptionParser.new do |opts|
     options[:mode] = m
   end
 
+  options[:daemon] = false
+  opts.on("--daemon","Continous acquisition.") do |daemon|
+    options[:daemon] = true
+  end
 
   opts.on("-v", "--verbose", "Run verbosely") do |v|
     options[:verbose] = v
@@ -97,7 +101,7 @@ Thread.new do
         if response.length>=10 && response.gsub(/Temp.value \d+/)
           p response.length if options[:debug]
           puts response
-          exit
+          exit if !options[:daemon]
         else
           puts "Invalid response for munin mode:" if options[:debug]
           p response if options[:debug]
