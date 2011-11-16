@@ -13,5 +13,4 @@ EOM
 exit 0;;
 esac
 
-#path to serialreader.rb
-/usr/local/rvm/bin/ruby /home/x42/serialreader.git/serialreader.rb -m munin -d /dev/ttyUSB1
+/usr/local/rvm/bin/ruby /home/x42/serialreader.git/raw_temp2munin.rb
