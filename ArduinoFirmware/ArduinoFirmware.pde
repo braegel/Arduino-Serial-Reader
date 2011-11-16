@@ -50,16 +50,16 @@ void loop() {
   for (i=0;i<=measurements;i++){
     sensorValue0[i] = analogRead(analogInPin0);
 ////    Serial.println(sensorValue0[i]);
-//    sensorValue1[i] = analogRead(analogInPin1);
+    sensorValue1[i] = analogRead(analogInPin1);
 ////    Serial.println(sensorValue1[i]);    
-//    sensorValue2[i] = analogRead(analogInPin2);            
+    sensorValue2[i] = analogRead(analogInPin2);            
 ////    Serial.println(sensorValue2[i]);
-//    sensorValue3[i] = analogRead(analogInPin3);            
+    sensorValue3[i] = analogRead(analogInPin3);            
 ////    Serial.println(sensorValue3[i]);
-//    sensorValue4[i] = analogRead(analogInPin4);            
+    sensorValue4[i] = analogRead(analogInPin4);            
 ////    Serial.println(sensorValue4[i]);
 //
-////    sensorValue5[i] = analogRead(analogInPin5); // TODO: Why does the code stuck if i uncomment this?
+    sensorValue5[i] = analogRead(analogInPin5);
 ////    Serial.println(sensorValue5[i]);
   }
 
@@ -78,81 +78,81 @@ void loop() {
         }
      }
 
-//    done = 0;                // flag to know when we're done sorting              
-//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
-//      done = 1;
-//        for (j = 0; j <= 5; j++){
-//          if (sensorValue1[j] > sensorValue1[j + 1]){     // numbers are out of order - swap
-//            temp = sensorValue1[j + 1];
-//            sensorValue1 [j+1] =  sensorValue1[j] ;
-//            sensorValue1 [j] = temp;
-//            done = 0;
-//           }
-//        }
-//     }
-//    done = 0;                // flag to know when we're done sorting              
-//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
-//      done = 1;
-//        for (j = 0; j <= 5; j++){
-//          if (sensorValue2[j] > sensorValue2[j + 1]){     // numbers are out of order - swap
-//            temp = sensorValue2[j + 1];
-//            sensorValue2 [j+1] =  sensorValue2[j] ;
-//            sensorValue2 [j] = temp;
-//            done = 0;
-//           }
-//        }
-//     }
-//    done = 0;                // flag to know when we're done sorting              
-//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
-//      done = 1;
-//        for (j = 0; j <= 5; j++){
-//          if (sensorValue3[j] > sensorValue3[j + 1]){     // numbers are out of order - swap
-//            temp = sensorValue3[j + 1];
-//            sensorValue3 [j+1] =  sensorValue3[j] ;
-//            sensorValue3 [j] = temp;
-//            done = 0;
-//           }
-//        }
-//     }
-//    done = 0;                // flag to know when we're done sorting              
-//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
-//      done = 1;
-//        for (j = 0; j <= 5; j++){
-//          if (sensorValue4[j] > sensorValue4[j + 1]){     // numbers are out of order - swap
-//            temp = sensorValue4[j + 1];
-//            sensorValue4 [j+1] =  sensorValue4[j] ;
-//            sensorValue4 [j] = temp;
-//            done = 0;
-//           }
-//        }
-//     }
-//    done = 0;                // flag to know when we're done sorting              
-//    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
-//      done = 1;
-//        for (j = 0; j <= 5; j++){
-//          if (sensorValue5[j] > sensorValue5[j + 1]){     // numbers are out of order - swap
-//            temp = sensorValue5[j + 1];
-//            sensorValue5 [j+1] =  sensorValue5[j] ;
-//            sensorValue5 [j] = temp;
-//            done = 0;
-//           }
-//        }
-//     }
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue1[j] > sensorValue1[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue1[j + 1];
+            sensorValue1 [j+1] =  sensorValue1[j] ;
+            sensorValue1 [j] = temp;
+            done = 0;
+           }
+        }
+     }
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue2[j] > sensorValue2[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue2[j + 1];
+            sensorValue2 [j+1] =  sensorValue2[j] ;
+            sensorValue2 [j] = temp;
+            done = 0;
+           }
+        }
+     }
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue3[j] > sensorValue3[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue3[j + 1];
+            sensorValue3 [j+1] =  sensorValue3[j] ;
+            sensorValue3 [j] = temp;
+            done = 0;
+           }
+        }
+     }
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue4[j] > sensorValue4[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue4[j + 1];
+            sensorValue4 [j+1] =  sensorValue4[j] ;
+            sensorValue4 [j] = temp;
+            done = 0;
+           }
+        }
+     }
+    done = 0;                // flag to know when we're done sorting              
+    while(done != 1){        // simple swap sort, sorts numbers from lowest to highest
+      done = 1;
+        for (j = 0; j <= 5; j++){
+          if (sensorValue5[j] > sensorValue5[j + 1]){     // numbers are out of order - swap
+            temp = sensorValue5[j + 1];
+            sensorValue5 [j+1] =  sensorValue5[j] ;
+            sensorValue5 [j] = temp;
+            done = 0;
+           }
+        }
+     }
 
   
   // Send middle field of array to serial. It's the median.
   
   Serial.print("A0\t");
   Serial.println(sensorValue0[2]);      
-//  Serial.print("A1\t");
-//  Serial.println(sensorValue1[2]);      
-//  Serial.print("A2\t");
-//  Serial.println(sensorValue2[2]);      
-//  Serial.print("A3\t");
-//  Serial.println(sensorValue3[2]);      
-//  Serial.print("A4\t");
-//  Serial.println(sensorValue4[2]);      
-//  Serial.print("A5\t");
-//  Serial.println(sensorValue5[2]);
+  Serial.print("A1\t");
+  Serial.println(sensorValue1[2]);      
+  Serial.print("A2\t");
+  Serial.println(sensorValue2[2]);      
+  Serial.print("A3\t");
+  Serial.println(sensorValue3[2]);      
+  Serial.print("A4\t");
+  Serial.println(sensorValue4[2]);      
+  Serial.print("A5\t");
+  Serial.println(sensorValue5[2]);
   delay(5000);
 }
