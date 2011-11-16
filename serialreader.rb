@@ -17,7 +17,7 @@ OptionParser.new do |opts|
    end
 
   options[:mode]= 'raw'
-  opts.on("-m MODE", "--mode MODE", "Possible modes are: 'raw', 'ruby' and 'munin'. (default: #{options[:mode]})") do |m|
+  opts.on("-m MODE", "--mode MODE", "Possible modes are: 'raw', 'ruby', 'quiet (write values to './current/)'  and 'munin'. (default: #{options[:mode]})") do |m|
     options[:mode] = m
   end
 
@@ -79,6 +79,17 @@ Thread.new do
       p row if options[:debug]
 
       #format output fitting to output mode
+
+      if options[:mode].eql?('quiet')
+        row.each do |key,value|
+          if key =~ /A\d/
+            f = File.new("./current/#{key}",'w')
+            f.puts(value)
+            f.close
+          end
+        end
+      end
+
       if options[:mode].eql?('ruby')
         p row
       end
@@ -106,9 +117,7 @@ Thread.new do
           puts "Invalid response for munin mode:" if options[:debug]
           p response if options[:debug]
         end
-
       end
-
     end
   end
 end
