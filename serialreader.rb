@@ -1,4 +1,4 @@
-#!/usr/local/rvm/bin/ruby
+#!/usr/bin/ruby1.9.3
 
 require 'rubygems'
 require 'serialport'

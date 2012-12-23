@@ -1,6 +1,6 @@
-#!/usr/local/rvm/bin/ruby
+#!/usr/bin/ruby1.9.3
 
-f=File.open("/home/x42/serialreader.git/current/A0",'r') # temperatur sensor (NTC) is at Arduinos analog pin A0
+f=File.open("/mnt/RAID5/bernd/documents/Projekte/serialreader.git/current/A0",'r') # temperatur sensor (NTC) is at Arduinos analog pin A0
 raw=f.readline
 #calibration                                                                                                                                                           
 # 530 => 23                                                                                                                                                            

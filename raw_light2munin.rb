@@ -1,6 +1,5 @@
-#!/usr/local/rvm/bin/ruby
+#!/usr/bin/ruby1.9.3
 
-f=File.open("/home/x42/serialreader.git/current/A1",'r') # light sensor (NTC) is at Arduinos analog pin A1
+f=File.open("/mnt/RAID5/bernd/documents/Projekte/serialreader.git/current/A1",'r') # light sensor (NTC) is at Arduinos analog pin A1
 raw=f.readline
-puts "Darkness.value #{raw.to_i}\n"
- 
+puts "Light.value #{raw.to_i}\n"

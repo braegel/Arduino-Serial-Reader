@@ -1,0 +1,2 @@
+./serialreader.rb:128:in `gets': Bad file descriptor - <STDIN> (Errno::EBADF)
+	from ./serialreader.rb:128:in `<main>'
