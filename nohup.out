@@ -1,2 +1,9 @@
 ./serialreader.rb:128:in `gets': Bad file descriptor - <STDIN> (Errno::EBADF)
 	from ./serialreader.rb:128:in `<main>'
+./serialreader.rb:128:in `gets': Bad file descriptor - <STDIN> (Errno::EBADF)
+	from ./serialreader.rb:128:in `<main>'
+./serialreader.rb:128:in `gets': Bad file descriptor - <STDIN> (Errno::EBADF)
+	from ./serialreader.rb:128:in `<main>'
+/var/lib/gems/1.9.1/gems/serialport-1.1.0/lib/serialport.rb:16:in `create': Permission denied - /dev/ttyUSB0 (Errno::EACCES)
+	from /var/lib/gems/1.9.1/gems/serialport-1.1.0/lib/serialport.rb:16:in `new'
+	from ./serialreader.rb:55:in `<main>'
