@@ -48,19 +48,35 @@ void loop() {
   // read the analog in value 5 times:
   
   for (i=0;i<=measurements;i++){
+    analogRead(analogInPin0);
+    delay (10);
     sensorValue0[i] = analogRead(analogInPin0);
-////    Serial.println(sensorValue0[i]);
+    delay (10);
+
+    analogRead(analogInPin1);
+    delay (10);
     sensorValue1[i] = analogRead(analogInPin1);
-////    Serial.println(sensorValue1[i]);    
+    delay (10);
+
+    analogRead(analogInPin2);
+    delay (10);
     sensorValue2[i] = analogRead(analogInPin2);            
-////    Serial.println(sensorValue2[i]);
+    delay (10);
+
+    analogRead(analogInPin3);
+    delay (10);
     sensorValue3[i] = analogRead(analogInPin3);            
-////    Serial.println(sensorValue3[i]);
+    delay (10);
+
+    analogRead(analogInPin4);
+    delay (10);
     sensorValue4[i] = analogRead(analogInPin4);            
-////    Serial.println(sensorValue4[i]);
-//
+    delay (10);
+
+    analogRead(analogInPin5);
+    delay (10);
     sensorValue5[i] = analogRead(analogInPin5);
-////    Serial.println(sensorValue5[i]);
+    delay (10);
   }
 
 // SORT Array to build the median
@@ -154,5 +170,4 @@ void loop() {
   Serial.println(sensorValue4[2]);      
   Serial.print("A5\t");
   Serial.println(sensorValue5[2]);
-  delay(5000);
 }
