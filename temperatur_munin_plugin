@@ -13,5 +13,5 @@ EOM
 exit 0;;
 esac
 
-/usr/bin/ruby1.9.3 /mnt/RAID5_intern/bernd/documents/Projekte/serialreader.git/raw_temp2munin.rb
+/home/x42/projekte/serialreader.git/raw_temp2munin.rb
 
